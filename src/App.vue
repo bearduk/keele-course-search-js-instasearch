@@ -58,9 +58,9 @@ export default {
           container: '#courseLevel',
           attributeName: 'courseLevelName',
           templates: {
-          header: 'Course Level',
-          sortBy: ["name:asc"]
-        }
+          header: 'Course Level'
+          },
+          sortBy: ["count:desc"] // count should almost always order by ug, pg, pgt
       })
     );
 
