@@ -62,7 +62,7 @@ export default {
           templates: {
           header: 'Course Level'
           },
-          sortBy: ["count:desc"] // count should almost always order by ug, pg, pgt
+          sortBy: ["name:desc"] // count should almost always order by ug, pg, pgt
       })
     );
 
@@ -127,6 +127,16 @@ export default {
       width:90%;
       margin: auto;
     }
+
+    .ais-refinement-list--count{
+      background: black;
+      color:white;
+    }
+    .ais-refinement-list--label {
+      text-transform: capitalize;
+    }
+
+
 
     /* throw some basic CSS in */
     body {
