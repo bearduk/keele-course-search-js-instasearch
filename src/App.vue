@@ -38,7 +38,7 @@ export default {
           indexName: 'dev_COURSES',
           urlSync: true,
           searchParameters: {
-            hitsPerPage: 6,
+            hitsPerPage: 5, // best to match an option in Pagination array
             attributesToSnippet: [
             'snippet:35'
             ],
@@ -83,9 +83,10 @@ export default {
       instantsearch.widgets.hitsPerPageSelector({
         container: '#hits-per-page-selector',
         items: [
+          {value: 5, label: '5 per page'},
           {value: 10, label: '10 per page'},
           {value: 20, label: '20 per page'},
-          {value: 30, label: '30 per page'},
+          {value: 30, label: '30 per page'}
         ]
       })
     );    
