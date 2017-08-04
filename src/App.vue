@@ -98,7 +98,7 @@ export default {
         templates: {
         empty: 'No courses found',
         item: '<div class="course-result"><!-- Hit {{ objectID }}: --><a href="{{ urlPath }}">{{{ _highlightResult.courseTitle.value }}}</a> <span class="course-level">{{courseLevel}}</span>\
-        <p>{{{_snippetResult.snippet.value}}}</p></div>'
+        <p class="needs_bem_snippet">{{{_snippetResult.snippet.value}}}</p></div>'
       }
       })
     );
@@ -143,8 +143,14 @@ export default {
       font-family: sans-serif;
     }
     em {
+      // removing as it is misleading for the user as the re
       font-weight: bold;
       color: #FFA500;
+    }
+    .needs_bem_snippet em {
+      font-weight: initial;
+      color: initial;
+      font-style: normal;
     }
     .logo {
       margin-bottom: 10px;
