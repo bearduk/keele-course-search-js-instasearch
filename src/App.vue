@@ -38,7 +38,7 @@ export default {
           searchParameters: {
             hitsPerPage: 6,
             attributesToSnippet: [
-            'snippet:25'
+            'snippet:35'
             ],
             snippetEllipsisText: '...'
           }
@@ -95,7 +95,7 @@ export default {
         templates: {
         empty: 'No courses found',
         item: '<div class="course-result"><!-- Hit {{ objectID }}: --><a href="{{ urlPath }}">{{{ _highlightResult.courseTitle.value }}}</a> <span class="course-level">{{courseLevel}}</span>\
-        <p>{{_snippetResult.snippet.value}}</p></div>'
+        <p>{{{_snippetResult.snippet.value}}}</p></div>'
       }
       })
     );
@@ -120,7 +120,10 @@ export default {
     .ais-clear-all--link-disabled {
       display: none;
     }
-
+    .container {
+      width:90%;
+      margin: auto;
+    }
 
     /* throw some basic CSS in */
     body {
