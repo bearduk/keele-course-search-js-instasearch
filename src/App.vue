@@ -97,7 +97,7 @@ export default {
         container: '#hits',
         templates: {
         empty: 'No courses found',
-        item: '<div class="course-result"><!-- Hit {{ objectID }}: --><a href="{{ urlPath }}">{{{ _highlightResult.courseTitle.value }}}</a> <span class="course-level">{{courseLevel}}</span>\
+        item: '<div class="course-result"><!-- Hit {{ objectID }}: --><a href="{{ urlPath }}">{{{ _highlightResult.courseTitle.value }}}</a> <span class="course-level">{{courseLevelName}}</span>\
         <p class="needs_bem_snippet">{{{_snippetResult.snippet.value}}}</p></div>'
       }
       })
@@ -164,7 +164,7 @@ export default {
     border: 1px solid #e0e0e0;
     padding: 3px 5px;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     }
     .course-result{
       margin-bottom: 4px;
