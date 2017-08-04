@@ -1,5 +1,7 @@
 <template>
   <div class="container">
+
+  <h1>Course Finder</h1>
       <div id="search-box">
         <!-- SearchBox widget will appear here -->
       </div>
