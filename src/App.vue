@@ -5,6 +5,8 @@
       <div id="search-box">
         <!-- SearchBox widget will appear here -->
       </div>
+
+      <div id="custom-searchbox"></div>
       
       <div id="courseLevel"></div>
       <div id="clear-all"></div>
@@ -45,6 +47,40 @@ export default {
             snippetEllipsisText: '...'
           }
         });
+
+
+
+/* start custom search box */ /* REQUIRES LODASH AND JQUERY */
+/* see docs for info https://community.algolia.com/instantsearch.js/v2/connectors/connectSearchBox.html */
+// custom `renderFn` to render the custom SearchBox widget
+  function renderFn(SearchBoxRenderingOptions, isFirstRendering) {
+    if (isFirstRendering) {
+      SearchBoxRenderingOptions.widgetParams.containerNode.html('Throttled: <input type="text" />');
+      SearchBoxRenderingOptions.widgetParams.containerNode
+        .find('input')
+        .on('keyup', _.debounce(function() {
+          SearchBoxRenderingOptions.refine($(this).val());
+        }, 300));
+      SearchBoxRenderingOptions.widgetParams.containerNode
+        .find('input')
+        .val(SearchBoxRenderingOptions.query);
+    }
+  }
+
+  // connect `renderFn` to SearchBox logic
+  var customSearchBox = instantsearch.connectors.connectSearchBox(renderFn);
+
+  // mount widget on the page
+  search.addWidget(
+    customSearchBox({
+      containerNode: $('#custom-searchbox'),
+    })
+  );
+
+/* end custom search box */
+
+
+
 
     // initialize SearchBox
     search.addWidget(
