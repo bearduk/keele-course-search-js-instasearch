@@ -2,9 +2,9 @@
   <div class="container">
 
   <h1>Course Finder</h1>
-      <div id="search-box">
+      <!-- <div id="search-box"> -->
         <!-- SearchBox widget will appear here -->
-      </div>
+      <!-- </div> -->
 
       <div id="custom-searchbox"></div>
       
@@ -83,12 +83,12 @@ export default {
 
 
     // initialize SearchBox
-    search.addWidget(
-      instantsearch.widgets.searchBox({
-        container: '#search-box',
-        placeholder: 'Search for courses'
-      })
-    );
+    // search.addWidget(
+    //   instantsearch.widgets.searchBox({
+    //     container: '#search-box',
+    //     placeholder: 'Search for courses'
+    //   })
+    // );
 
     // refinement list
     search.addWidget(
