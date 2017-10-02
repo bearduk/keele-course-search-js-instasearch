@@ -55,7 +55,7 @@ export default {
 // custom `renderFn` to render the custom SearchBox widget
   function renderFn(SearchBoxRenderingOptions, isFirstRendering) {
     if (isFirstRendering) {
-      SearchBoxRenderingOptions.widgetParams.containerNode.html('Throttled: <input type="text" />');
+      SearchBoxRenderingOptions.widgetParams.containerNode.html('Throttled: <input name="name" id="search" type="Search" placeholder="Search" />');
       SearchBoxRenderingOptions.widgetParams.containerNode
         .find('input')
         .on('keyup', _.debounce(function() {
