@@ -37,7 +37,7 @@ export default {
     const search = instantsearch({
           appId: 'HT7VYJG3KU',
           apiKey: 'd37bbf3291b226676c9f3f1937e865d3',
-          indexName: 'dev_COURSES',
+          indexName: 'keele_main_COURSES',
           urlSync: true,
           searchParameters: {
             hitsPerPage: 5, // best to match an option in Pagination array
