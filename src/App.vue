@@ -102,7 +102,16 @@ export default {
             body: 'cb-TESTER-BODY'
           },
           templates: {
-          header: 'Course Level'
+          header: 'Course Level',
+          // cbChecked class added in {{#isRefined}}cbChecked{{/isRefined}}, use this to hook into Absolute code?
+          // item: '<div class="form__field"><input name="name-study-level" id="" type="checkbox" class="{{#isRefined}}cbChecked{{/isRefined}}"> <label for="id-undergraduate">{{ value }}</label> ( {{count}} )</div>',
+          // item: '<li>{{value}}</li>'
+          // 1 
+          // item: '{{value}} {{#isRefined}}Selected{{/isRefined}} ({{count}})',
+          // OR
+          // 2
+          // item: function(param) {
+          //  return '👉 ' + param.value; // end 2
           },
           sortBy: ["name:desc"] // count should almost always order by ug, pg, pgt
       })
