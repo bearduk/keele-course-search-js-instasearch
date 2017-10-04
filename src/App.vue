@@ -95,6 +95,12 @@ export default {
       instantsearch.widgets.refinementList({
           container: '#courseLevel',
           attributeName: 'courseLevelName',
+          cssClasses: { // these may be helpful when adding Absolute styling?
+            root: 'cb-TESTER-ROOT',
+            list: 'cb-TESTER-LIST',
+            item: 'cb-TESTER-ITEM',
+            body: 'cb-TESTER-BODY'
+          },
           templates: {
           header: 'Course Level'
           },
