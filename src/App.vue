@@ -103,6 +103,10 @@ export default {
           },
           templates: {
           header: 'Course Level',
+          item: (data) => {
+            const checked = data.isRefined ? 'checked' : '';
+            return '<input type="checkbox" name="name-study-level" ' + checked + '>' + data.value + '</input> ( hits ' + data.count +' )';
+          }
           // cbChecked class added in {{#isRefined}}cbChecked{{/isRefined}}, use this to hook into Absolute code?
           // item: '<div class="form__field"><input name="name-study-level" id="" type="checkbox" class="{{#isRefined}}cbChecked{{/isRefined}}"> <label for="id-undergraduate">{{ value }}</label> ( {{count}} )</div>',
           // item: '<div class="form__field"><input name="name-study-level" id="id-undergraduate" type="checkbox" value="undergraduate"> <label for="id-undergraduate">{{value}}</label></div>'
