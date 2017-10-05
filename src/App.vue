@@ -105,7 +105,8 @@ export default {
           header: 'Course Level',
           // cbChecked class added in {{#isRefined}}cbChecked{{/isRefined}}, use this to hook into Absolute code?
           // item: '<div class="form__field"><input name="name-study-level" id="" type="checkbox" class="{{#isRefined}}cbChecked{{/isRefined}}"> <label for="id-undergraduate">{{ value }}</label> ( {{count}} )</div>',
-          item: '<input type="checkbox">{{value}}</input> (this is a custom template but the checkboxes don\'t work) {{#isRefined}} - is Checked{{/isRefined}} - ( hits {{count}} )'
+          // item: '<input type="checkbox">{{value}}</input> (this is a custom template but the checkboxes don\'t work) {{#isRefined}} - is Checked{{/isRefined}} - ( hits {{count}} )'
+          item: '<div class="form__field"><input name="name-study-level" id="{{value}}" type="checkbox" value="{{value}}"> <label for="{{value}}">{{value}} ( {{count}} ) {{#isRefined}} - is selected{{/isRefined}}</label></div>'
           // 1 
           // item: '{{value}} {{#isRefined}}Selected{{/isRefined}} ({{count}})',
           // OR
