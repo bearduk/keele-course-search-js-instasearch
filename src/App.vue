@@ -98,7 +98,7 @@ export default {
           cssClasses: { // these may be helpful when adding Absolute styling?
             root: 'cb-TESTER-ROOT',
             list: 'cb-TESTER-LIST',
-            item: 'cb-TESTER-ITEM',
+            item: 'cb-TESTER-ITEM form__field',
             body: 'cb-TESTER-BODY'
           },
           templates: {
@@ -107,7 +107,7 @@ export default {
           // item: '<div class="form__field"><input name="name-study-level" id="" type="checkbox" class="{{#isRefined}}cbChecked{{/isRefined}}"> <label for="id-undergraduate">{{ value }}</label> ( {{count}} )</div>',
           // item: '<div class="form__field"><input name="name-study-level" id="id-undergraduate" type="checkbox" value="undergraduate"> <label for="id-undergraduate">{{value}}</label></div>'
           
-          item: '<input type="checkbox">{{value}}</input> (this is a custom template but the checkboxes don\'t work) {{#isRefined}} - is Checked{{/isRefined}} - ( hits {{count}} )'          
+          // item: '<input type="checkbox">{{value}}</input> (this is a custom template but the checkboxes don\'t work) {{#isRefined}} - is Checked{{/isRefined}} - ( hits {{count}} )'          
           // ## I've tried using a single string for the value i.e. courseLevel from the Algolia set rather than the courseLevelName which has spaces. Not even sure if this is the way to go for checkboxes at all.
 
           // 1 
