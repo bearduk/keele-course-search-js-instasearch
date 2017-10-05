@@ -89,7 +89,7 @@ export default {
     //     placeholder: 'Search for courses'
     //   })
     // );
-
+    
     // refinement list
     search.addWidget(
       instantsearch.widgets.refinementList({
@@ -106,7 +106,10 @@ export default {
           // cbChecked class added in {{#isRefined}}cbChecked{{/isRefined}}, use this to hook into Absolute code?
           // item: '<div class="form__field"><input name="name-study-level" id="" type="checkbox" class="{{#isRefined}}cbChecked{{/isRefined}}"> <label for="id-undergraduate">{{ value }}</label> ( {{count}} )</div>',
           // item: '<input type="checkbox">{{value}}</input> (this is a custom template but the checkboxes don\'t work) {{#isRefined}} - is Checked{{/isRefined}} - ( hits {{count}} )'
-          item: '<div class="form__field"><input name="name-study-level" id="{{value}}" type="checkbox" value="{{value}}"> <label for="{{value}}">{{value}} ( {{count}} ) {{#isRefined}} - is selected{{/isRefined}}</label></div>'
+          
+          item: '<div class="form__field"><input name="name-study-level" id="id-undergraduate" type="checkbox" value="undergraduate"> <label for="id-undergraduate">{{value}}</label></div>'
+          // ## I've tried using a single string for the value i.e. courseLevel from the Algolia set rather than the courseLevelName which has spaces. Not even sure if this is the way to go for checkboxes at all.
+
           // 1 
           // item: '{{value}} {{#isRefined}}Selected{{/isRefined}} ({{count}})',
           // OR
