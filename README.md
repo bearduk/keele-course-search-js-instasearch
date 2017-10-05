@@ -4,6 +4,10 @@
 
 A simple course finder using 3 facets in a refinement list.
 
+Lots of variations on this.
+I could just use cssClasses on the standard widget.
+The alternative is to use the custom template passing in data [https://jsfiddle.net/bearduk/hb3agn5u/](https://jsfiddle.net/bearduk/hb3agn5u/)
+
 The refinement list needs to be custom html, including a working checkbox:
 
 Required output for html is:
