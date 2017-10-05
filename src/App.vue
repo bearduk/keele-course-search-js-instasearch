@@ -1,6 +1,10 @@
 <template>
   <div class="container">
 
+
+<p>test custom renderFn version</p>
+<div id="custom-refinement-list-container"></div>
+
   <h1>Course Finder</h1>
       <!-- <div id="search-box"> -->
         <!-- SearchBox widget will appear here -->
@@ -120,6 +124,64 @@ export default {
           sortBy: ["name:desc"] // count should almost always order by ug, pg, pgt
       })
     );
+
+
+
+// custom `renderFn` to render the custom RefinementList widget
+function renderFn2(RefinementListRenderingOptions, isFirstRendering) {
+  if (isFirstRendering) {
+    RefinementListRenderingOptions.widgetParams.containerNode
+      .html('<ul></ul>')
+  }
+
+    RefinementListRenderingOptions.widgetParams.containerNode
+      .find('li[data-refine-value]')
+      .each(function() { $(this).off('click'); });
+
+  if (RefinementListRenderingOptions.canRefine) {
+    var list = RefinementListRenderingOptions.items.map(function(item) {
+      return `
+        <li data-refine-value="${item.value}" class="form_field">
+          <input type="checkbox" value="${item.value}" ${item.isRefined ? 'checked' : ''} />
+          <a href="${RefinementListRenderingOptions.createURL(item.value)}">
+            ${item.label} (${item.count})
+          </a>
+        </li>
+      `;
+    });
+
+    RefinementListRenderingOptions.widgetParams.containerNode.find('ul').html(list);
+    RefinementListRenderingOptions.widgetParams.containerNode
+      .find('li[data-refine-value]')
+      .each(function() {
+        $(this).on('click', function(event) {
+          event.stopPropagation();
+          event.preventDefault();
+
+          RefinementListRenderingOptions.refine($(this).data('refine-value'));
+        });
+      });
+  } else {
+    RefinementListRenderingOptions.widgetParams.containerNode.find('ul').html('');
+  }
+}
+
+// connect `renderFn` to RefinementList logic
+var customRefinementList = instantsearch.connectors.connectRefinementList(renderFn2);
+
+// mount widget on the page
+search.addWidget(
+  customRefinementList({
+    containerNode: $('#custom-refinement-list-container'),
+    attributeName: 'courseLevelName',
+    limit: 10,
+    sortBy: ["name:desc"] // count should almost always order by ug, pg, pgt
+  })
+);
+
+
+
+
 
     // clear all 
     search.addWidget(
