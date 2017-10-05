@@ -2,6 +2,10 @@
 
 > Course Search InstantSearch.js
 
+A simple course finder using 3 facets in a refinement list.
+
+The refinement list needs to be custom html, including a working checkbox.
+
 ## Build Setup
 
 ``` bash
