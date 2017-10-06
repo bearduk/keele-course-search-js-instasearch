@@ -13,9 +13,11 @@ The refinement list needs to be custom html, including a working checkbox:
 Required output for html is:
 
 ```html
-    <div class="form__field"><input name="name-study-level" id="id-undergraduate" type="checkbox" value="undergraduate"> <label for="id-undergraduate">Undergraduate</label></div>
-    <div class="form__field"><input name="name-study-level" id="id-postgraduate-taught" type="checkbox" value="postgraduate-taught"> <label for="id-postgraduate-taught">Postgraduate Taught</label></div>
-    <div class="form__field"><input name="name-study-level" id="id-postgraduate-research" type="checkbox" value="postgraduate-research"> <label for="id-postgraduate-research">Postgraduate Research</label></div>
+<div class="form__field"><input name="name-study-level" id="id-undergraduate" type="checkbox" value="undergraduate"> <label for="id-undergraduate">Undergraduate</label></div>
+
+<div class="form__field"><input name="name-study-level" id="id-postgraduate-taught" type="checkbox" value="postgraduate-taught"> <label for="id-postgraduate-taught">Postgraduate Taught</label></div>
+
+<div class="form__field"><input name="name-study-level" id="id-postgraduate-research" type="checkbox" value="postgraduate-research"> <label for="id-postgraduate-research">Postgraduate Research</label></div>
 ```
 
 ## Build Setup
