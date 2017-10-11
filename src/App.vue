@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-
-  <h1>Course Finder</h1>
+  <transition name="vAnimation" appear> <!-- appear only for page load when you're not using toggle -->
+    <h1 v-if="show" >Course Finder</h1>  
+  </transition>
+  <button @click="show = !show">toggle title</button>
       <!-- <div id="search-box"> -->
         <!-- SearchBox widget will appear here -->
       <!-- </div> -->
@@ -29,7 +31,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      show: true
     }
   },
   mounted(){
@@ -227,5 +230,52 @@ export default {
     }
     .course-result{
       margin-bottom: 4px;
+    }
+
+
+//  ** TRANSITION ONLY
+    // //  transition animations test.
+    // .vvAnimation-enter, .vvAnimation-leave-to {
+    //   opacity: 0;
+    // } 
+    // .vvAnimation-enter-active, .vvAnimation-leave-active {
+    //   transition: opacity 5s;
+    // }
+
+//  ** TRANSITION AND ANIMATIONO MIXED
+    // animation
+    .vAnimation-enter {
+      opacity: 0;
+    }
+    .vAnimation-enter-active {
+      animation: slide-in 2s ease-out forwards;
+      transition: opacity 3s;
+    }
+    .vAnimation-leave {
+
+    }
+    .vAnimation-leave-active {
+      animation: slide-out 2s ease-out forwards;
+      transition: opacity 3s;
+      opacity: 0;
+    }
+
+    @keyframes slide-in {
+      from {
+        // transform: translateX(100px);
+        transform: rotate(-15deg);
+      }
+      to {
+        // transform: translateX(0px);
+        transform: rotate(0deg);
+      }
+    }
+    @keyframes slide-out {
+      from {
+        transform: translateY(0px);
+      }
+      to {
+        transform: translateY(20px);
+      }      
     }
 </style>
